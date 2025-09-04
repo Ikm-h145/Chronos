@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="#65D98E" android:state_checked="true"/>   <!-- 選択中（緑） -->
+    <item android:color="#7A7A7A"/>                                <!-- 非選択（グレー） -->
+</selector>
