@@ -104,7 +104,7 @@
         android:layout_marginEnd="20dp"
         android:background="@drawable/bg_card_mint"
         android:padding="10dp"
-        android:text="身支度 & ジョギング"
+        android:text="身支度 ＆ ジョギング"
         android:textColor="#1B1B1B"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.652"
