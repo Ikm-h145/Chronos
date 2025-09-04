@@ -5,6 +5,9 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge; // EdgeToEdgeを使用する場合
 import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 // WindowInsetsCompat関連のインポートは、実際に使用する場合にのみ残します
 // import androidx.core.graphics.Insets;
 // import androidx.core.view.ViewCompat;
@@ -17,6 +20,22 @@ public class activity_percent extends AppCompatActivity { // クラス名も Act
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this); // EdgeToEdge を有効にする場合
         setContentView(R.layout.activity_percent); // ★修正点: 正しいレイアウトファイルを指定
+        BottomNavigationView bottomNav = findViewById(R.id.bottomNav);
+        bottomNav.setSelectedItemId(R.id.tab_simulation);
+        bottomNav.setOnItemSelectedListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.tab_simulation) {
+                return true;
+            } else if (id == R.id.tab_home) {
+                startActivity(
+                        new Intent(this, MainActivity.class)
+                                .addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+                );
+                return true;
+            }
+            return false;
+        });
+
 
         // XMLの各TextViewをIDで取得
         TextView feelingPercentText = findViewById(R.id.feelingPercent);
