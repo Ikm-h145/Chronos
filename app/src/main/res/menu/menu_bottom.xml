@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- アイコンはまずはシステムのを使っておく（後でVector Assetで差し替えOK） -->
+    <item android:id="@+id/tab_home"       android:title="Home"       android:icon="@android:drawable/ic_menu_view"/>
+    <item android:id="@+id/tab_calendar"   android:title="Calendar"   android:icon="@android:drawable/ic_menu_today"/>
+    <item android:id="@+id/tab_simulation" android:title="Simulation" android:icon="@android:drawable/ic_menu_manage"/>
+    <item android:id="@+id/tab_reflection" android:title="Reflection" android:icon="@android:drawable/ic_menu_edit"/>
+</menu>
