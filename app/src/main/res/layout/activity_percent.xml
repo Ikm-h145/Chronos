@@ -6,248 +6,275 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
     android:background="#F5F5F5"
     tools:context="activity_percent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="16dp">
-
-    <ImageButton
-        android:id="@+id/btnMenu"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="menu"
-        android:src="@android:drawable/ic_menu_sort_by_size"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"/>
-
-    <TextView
-        android:id="@+id/txtDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="2025/9/5"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btnMenu"
-        app:layout_constraintEnd_toStartOf="@id/btnBell"
-        app:layout_constraintHorizontal_bias="0.5"
-        android:layout_marginTop="16dp"/>
-
-    <ImageButton
-        android:id="@+id/btnBell"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="notifications"
-        android:src="@android:drawable/ic_dialog_info"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="12dp"
-        android:layout_marginTop="12dp"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="4dp"
-        app:cardBackgroundColor="@color/card_feeling_bg">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="20dp">
-
-            <TextView
-                android:id="@+id/feelingTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="充実度"
-                android:textColor="@color/text_dark"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/feelingSubtitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Feeling"
-                android:textColor="@color/text_dark"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="@+id/feelingTitle"
-                app:layout_constraintTop_toBottomOf="@+id/feelingTitle" />
-
-            <TextView
-                android:id="@+id/feelingPercent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="85%"
-                android:textColor="@color/text_dark"
-                android:textSize="48sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="4dp"
-        app:cardBackgroundColor="@color/card_fatigue_bg">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="20dp">
-
-            <TextView
-                android:id="@+id/fatigueTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="疲労度"
-                android:textColor="@color/text_dark"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/fatigueSubtitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fatigue"
-                android:textColor="@color/text_dark"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="@+id/fatigueTitle"
-                app:layout_constraintTop_toBottomOf="@+id/fatigueTitle" />
-
-            <TextView
-                android:id="@+id/fatiguePercent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="73%"
-                android:textColor="@color/text_dark"
-                android:textSize="48sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="4dp"
-        app:cardBackgroundColor="@color/card_happiness_bg">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="20dp">
-
-            <TextView
-                android:id="@+id/happinessTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="幸せ度"
-                android:textColor="@color/text_dark"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/happinessSubtitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Happiness"
-                android:textColor="@color/text_dark"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="@+id/happinessTitle"
-                app:layout_constraintTop_toBottomOf="@+id/happinessTitle" />
-
-            <TextView
-                android:id="@+id/happinessPercent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="24%"
-                android:textColor="@color/text_dark"
-                android:textSize="48sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/adviceButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#FFFFFF"
-        android:text="予定アドバイス"
-        android:textColor="@color/text_dark"
-        android:textSize="16sp"
-        app:cornerRadius="24dp"
-        app:strokeColor="@color/text_dark"
-        app:strokeWidth="1dp" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/adviceCard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="0dp"
-        app:cardBackgroundColor="@color/card_happiness_bg">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp">
 
-            <TextView
-                android:id="@+id/adviceLabel"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="16dp">
+
+                <ImageButton
+                    android:id="@+id/btnMenu"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="menu"
+                    android:src="@android:drawable/ic_menu_sort_by_size"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp"/>
+
+                <TextView
+                    android:id="@+id/txtDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2025/9/5"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/btnMenu"
+                    app:layout_constraintEnd_toStartOf="@id/btnBell"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    android:layout_marginTop="16dp"/>
+
+                <ImageButton
+                    android:id="@+id/btnBell"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="notifications"
+                    android:src="@android:drawable/ic_dialog_info"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="12dp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/card_feeling_bg">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/feelingTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="充実度"
+                        android:textColor="@color/text_dark"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/feelingSubtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Feeling"
+                        android:textColor="@color/text_dark"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="@+id/feelingTitle"
+                        app:layout_constraintTop_toBottomOf="@+id/feelingTitle" />
+
+                    <TextView
+                        android:id="@+id/feelingPercent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="85%"
+                        android:textColor="@color/text_dark"
+                        android:textSize="48sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/card_fatigue_bg">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/fatigueTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="疲労度"
+                        android:textColor="@color/text_dark"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/fatigueSubtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fatigue"
+                        android:textColor="@color/text_dark"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="@+id/fatigueTitle"
+                        app:layout_constraintTop_toBottomOf="@+id/fatigueTitle" />
+
+                    <TextView
+                        android:id="@+id/fatiguePercent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="73%"
+                        android:textColor="@color/text_dark"
+                        android:textSize="48sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/card_happiness_bg">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/happinessTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="幸せ度"
+                        android:textColor="@color/text_dark"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/happinessSubtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Happiness"
+                        android:textColor="@color/text_dark"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="@+id/happinessTitle"
+                        app:layout_constraintTop_toBottomOf="@+id/happinessTitle" />
+
+                    <TextView
+                        android:id="@+id/happinessPercent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="24%"
+                        android:textColor="@color/text_dark"
+                        android:textSize="48sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/adviceButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="アドバイス １"
-                android:textSize="12sp"
-                android:textColor="@color/text_dark"/>
-
-            <TextView
-                android:id="@+id/adviceText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="幸せ度が低いので、午後に友達との遊びの約束を入れてみては？"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="予定アドバイス"
                 android:textColor="@color/text_dark"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:lineSpacingExtra="4dp"/>
+                app:cornerRadius="24dp"
+                app:strokeColor="@color/text_dark"
+                app:strokeWidth="1dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/adviceCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/card_happiness_bg">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/adviceLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="アドバイス １"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_dark"/>
+
+                    <TextView
+                        android:id="@+id/adviceText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="幸せ度が低いので、午後に友達との遊びの約束を入れてみては？"
+                        android:textColor="@color/text_dark"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:lineSpacingExtra="4dp"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </ScrollView>
+
+    <!-- 下部タブバー（ルートの最後の子に置く） -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="?attr/colorSurface"
+        app:menu="@menu/menu_bottom"
+        app:labelVisibilityMode="labeled"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextColor="@color/nav_item_color"/>
 </LinearLayout>

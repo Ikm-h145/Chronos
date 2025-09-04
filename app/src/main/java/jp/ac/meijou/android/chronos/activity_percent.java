@@ -35,6 +35,7 @@ public class activity_percent extends AppCompatActivity { // クラス名も Act
             return insets;
         });
         */
+
     }
 
     /**
