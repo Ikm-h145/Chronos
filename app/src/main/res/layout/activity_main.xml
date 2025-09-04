@@ -1,19 +1,233 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
+
+    <!-- 上部バー：左にメニュー、中央に日付、右にベル -->
+    <ImageButton
+        android:id="@+id/btnMenu"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="menu"
+        android:src="@android:drawable/ic_menu_sort_by_size"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"/>
 
     <TextView
+        android:id="@+id/txtDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="2025/9/5"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnMenu"
+        app:layout_constraintEnd_toStartOf="@id/btnBell"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="16dp"/>
 
+    <ImageButton
+        android:id="@+id/btnBell"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="notifications"
+        android:src="@android:drawable/ic_dialog_info"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="12dp"/>
+
+    <!-- タイムラインの縦線（薄いグレー） -->
+    <View
+        android:id="@+id/timeline"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:background="#E0E0E0"
+        app:layout_constraintTop_toBottomOf="@id/txtDate"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"/>
+
+    <!-- 1件目：08:00 身支度 & ジョギング -->
+    <TextView
+        android:id="@+id/time1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="08:00 am"
+        android:textSize="12sp"
+        android:textColor="#7A7A7A"
+        app:layout_constraintTop_toBottomOf="@id/txtDate"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="8dp"/>
+
+    <View
+        android:id="@+id/accent1"
+        android:layout_width="3dp"
+        android:layout_height="40dp"
+        android:background="#4CAF50"
+        app:layout_constraintTop_toBottomOf="@id/txtDate"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="18dp"/>
+
+    <TextView
+        android:id="@+id/card1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_card_mint"
+        android:padding="10dp"
+        android:text="身支度 と ジョギング"
+        android:textColor="#1B1B1B"
+        app:layout_constraintTop_toTopOf="@id/accent1"
+        app:layout_constraintStart_toEndOf="@id/accent1"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="16dp"/>
+
+    <!-- 2件目：09:45 資格勉強 -->
+    <TextView
+        android:id="@+id/time2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="09:45 am"
+        android:textSize="12sp"
+        android:textColor="#7A7A7A"
+        app:layout_constraintTop_toBottomOf="@id/card1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="18dp"/>
+
+    <View
+        android:id="@+id/accent2"
+        android:layout_width="3dp"
+        android:layout_height="40dp"
+        android:background="#F9A825"
+        app:layout_constraintTop_toBottomOf="@id/card1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="26dp"/>
+
+    <TextView
+        android:id="@+id/card2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_card_peach"
+        android:padding="10dp"
+        android:text="資格勉強(基本情報技術者試験)"
+        android:textColor="#1B1B1B"
+        app:layout_constraintTop_toTopOf="@id/accent2"
+        app:layout_constraintStart_toEndOf="@id/accent2"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="16dp"/>
+
+    <!-- 3件目：10:50 休憩 -->
+    <TextView
+        android:id="@+id/time3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10:50 am"
+        android:textSize="12sp"
+        android:textColor="#7A7A7A"
+        app:layout_constraintTop_toBottomOf="@id/card2"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="18dp"/>
+
+    <View
+        android:id="@+id/accent3"
+        android:layout_width="3dp"
+        android:layout_height="40dp"
+        android:background="#EF5350"
+        app:layout_constraintTop_toBottomOf="@id/card2"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="26dp"/>
+
+    <TextView
+        android:id="@+id/card3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_card_pink"
+        android:padding="10dp"
+        android:text="休憩(ゲーム)"
+        android:textColor="#1B1B1B"
+        app:layout_constraintTop_toTopOf="@id/accent3"
+        app:layout_constraintStart_toEndOf="@id/accent3"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="16dp"/>
+
+    <!-- 緑ボタン -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEditPlan"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="予定を変更する"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:background="@drawable/bg_button_green"
+        app:layout_constraintTop_toBottomOf="@id/card3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- イラスト（丸背景＋あなたの画像） -->
+    <FrameLayout
+        android:id="@+id/illustrationWrap"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        app:layout_constraintTop_toBottomOf="@id/btnEditPlan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="6dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintVertical_bias="1">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_circle_green"/>
+
+        <ImageView
+            android:id="@+id/heroImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/my_avatar"
+            android:scaleType="centerCrop"
+            android:contentDescription="イラスト"/>
+
+        <TextView
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_circle_yellow"
+            android:text="☺"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_gravity="end|top"
+            android:translationX="-8dp"
+            android:translationY="8dp"/>
+    </FrameLayout>
+
+    <!-- 下部タブバー -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        app:menu="@menu/menu_bottom"
+        app:labelVisibilityMode="labeled"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
