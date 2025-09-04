@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- アイコンはまずはシステムのを使っておく（後でVector Assetで差し替えOK） -->
     <item android:id="@+id/tab_home"       android:title="Home"       android:icon="@android:drawable/ic_menu_view"/>
     <item android:id="@+id/tab_calendar"   android:title="Calendar"   android:icon="@android:drawable/ic_menu_today"/>

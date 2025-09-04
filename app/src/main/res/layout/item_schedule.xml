@@ -3,22 +3,74 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
-    <!-- 時刻（左） -->
+    <!-- 上部バー：左にメニュー、中央に日付、右にベル -->
+    <ImageButton
+        android:id="@+id/btnMenu"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="menu"
+        android:src="@android:drawable/ic_menu_sort_by_size"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"/>
+
+    <TextView
+        android:id="@+id/txtDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2025/9/5"
+        android:textSize="33sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnMenu"
+        app:layout_constraintEnd_toStartOf="@id/btnBell"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="20dp"/>
+
+    <ImageButton
+        android:id="@+id/btnBell"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="notifications"
+        android:src="@android:drawable/ic_dialog_info"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="12dp"/>
+
+    <!--予定の枠-->
+    <jp.ac.meijou.android.chronos.ui.ScheduleListView
+        android:id="@+id/scheduleList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtDate"
+        android:layout_marginTop="12dp"/>
+
+    <!--スケジュール時刻 -->
+
+    <!-- タイムライン（薄い） ※各行にも置いて位置を揃える -->
+
     <TextView
         android:id="@+id/tvTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:text="08:00 am"
-        android:textSize="16sp"
         android:textColor="#7A7A7A"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvCard"
+        app:layout_constraintEnd_toStartOf="@id/vAccent"
+        app:layout_constraintHorizontal_bias="0.586"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/timeline"
-        android:layout_marginStart="44dp"
-        app:layout_constraintBaseline_toBaselineOf="@id/tvCard"/>
+        app:layout_constraintTop_toTopOf="@id/tvCard" />
 
-    <!-- タイムライン（薄い） ※各行にも置いて位置を揃える -->
     <View
         android:id="@+id/timeline"
         android:layout_width="2dp"
@@ -30,26 +82,81 @@
         android:layout_marginStart="28dp"/>
 
     <!-- 濃いアクセント線（カード高さに追従） -->
+
+    <!-- カード -->
+
     <View
         android:id="@+id/vAccent"
         android:layout_width="4dp"
         android:layout_height="0dp"
         android:background="#4CAF50"
-        app:layout_constraintTop_toTopOf="@id/tvCard"
         app:layout_constraintBottom_toBottomOf="@id/tvCard"
-        app:layout_constraintStart_toEndOf="@id/timeline"
-        android:layout_marginStart="16dp"/>
+        app:layout_constraintEnd_toStartOf="@id/tvCard"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/tvTime"
+        app:layout_constraintTop_toTopOf="@id/tvCard" />
 
-    <!-- カード -->
     <TextView
         android:id="@+id/tvCard"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="176dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/bg_card_mint"
+        android:padding="10dp"
+        android:text="身支度 & ジョギング"
+        android:textColor="#1B1B1B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.652"
+        app:layout_constraintStart_toEndOf="@id/vAccent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/vAccent2"
+        android:layout_width="4dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:background="#F6945D"
+        app:layout_constraintBottom_toBottomOf="@id/tvCard2"
+        app:layout_constraintStart_toEndOf="@id/tvTime2"
+        app:layout_constraintTop_toTopOf="@id/tvCard2" />
+
+    <TextView
+        android:id="@+id/tvTime2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="09:45 am"
+        android:textColor="#7A7A7A"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvCard2"
+        app:layout_constraintEnd_toStartOf="@id/vAccent2"
+        app:layout_constraintHorizontal_bias="0.586"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCard2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/bg_card_mint"
+        android:padding="10dp"
+        android:text="資格勉強(基本情報技術者試験)"
+        android:textColor="#1B1B1B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.652"
+        app:layout_constraintStart_toEndOf="@id/vAccent2"
+        app:layout_constraintTop_toBottomOf="@id/tvCard" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="身支度＆ジョギング"
-        android:textColor="#1B1B1B"
-        android:background="@drawable/bg_card_mint"
-        app:layout_constraintStart_toEndOf="@id/vAccent"
+        app:menu="@menu/menu_bottom"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="20dp"/>
+        app:itemTextColor="@color/nav_item_color"
+        app:itemIconTint="@color/nav_item_color"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
