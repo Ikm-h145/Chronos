@@ -12,17 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chronos">
         <activity
-            android:name=".activity_percent"
-            android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
+            android:name=".calendar.CalendarActivity"
+            android:exported="false" />
+        <!-- 起動アクティビティ -->
         <activity
             android:name=".MainActivity"
-            android:exported="true"/>
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- パラメータ画面（アプリ内から明示的Intentで起動） -->
+        <activity
+            android:name=".activity_percent"
+            android:exported="false" />
     </application>
 
 </manifest>

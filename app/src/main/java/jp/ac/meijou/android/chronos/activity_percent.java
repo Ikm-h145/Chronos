@@ -26,15 +26,24 @@ public class activity_percent extends AppCompatActivity { // クラス名も Act
             int id = item.getItemId();
             if (id == R.id.tab_simulation) {
                 return true;
+            } else if (id == R.id.tab_calendar) {
+                startActivity(
+                        new Intent(this, jp.ac.meijou.android.chronos.calendar.CalendarActivity.class)
+                                .addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+                );
+                return true;
             } else if (id == R.id.tab_home) {
                 startActivity(
                         new Intent(this, MainActivity.class)
                                 .addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
                 );
                 return true;
+            } else if (id == R.id.tab_reflection) {
+                return true;
             }
             return false;
         });
+
 
 
         // XMLの各TextViewをIDで取得
