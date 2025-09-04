@@ -1,0 +1,7 @@
+{
+  "items": [
+    { "time": "08:00 am", "text": "身支度＆ジョギング", "accentColor": "#4CAF50", "cardBg": "mint" },
+    { "time": "09:45 am", "text": "資格勉強(基本情報技術者試験)", "accentColor": "#F9A825", "cardBg": "peach" },
+    { "time": "10:50 am", "text": "休憩(ゲーム)", "accentColor": "#EF5350", "cardBg": "pink" }
+  ]
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- 時刻（左） -->
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="08:00 am"
+        android:textSize="16sp"
+        android:textColor="#7A7A7A"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/timeline"
+        android:layout_marginStart="44dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvCard"/>
+
+    <!-- タイムライン（薄い） ※各行にも置いて位置を揃える -->
+    <View
+        android:id="@+id/timeline"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:background="#E0E0E0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="28dp"/>
+
+    <!-- 濃いアクセント線（カード高さに追従） -->
+    <View
+        android:id="@+id/vAccent"
+        android:layout_width="4dp"
+        android:layout_height="0dp"
+        android:background="#4CAF50"
+        app:layout_constraintTop_toTopOf="@id/tvCard"
+        app:layout_constraintBottom_toBottomOf="@id/tvCard"
+        app:layout_constraintStart_toEndOf="@id/timeline"
+        android:layout_marginStart="16dp"/>
+
+    <!-- カード -->
+    <TextView
+        android:id="@+id/tvCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="身支度＆ジョギング"
+        android:textColor="#1B1B1B"
+        android:background="@drawable/bg_card_mint"
+        app:layout_constraintStart_toEndOf="@id/vAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="20dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
