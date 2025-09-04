@@ -2,4 +2,5 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="card_feeling_bg">#FEEBEA</color> <color name="card_fatigue_bg">#E9EFFF</color> <color name="card_happiness_bg">#FFFDEB</color> <color name="text_dark">#212121</color>
 </resources>
