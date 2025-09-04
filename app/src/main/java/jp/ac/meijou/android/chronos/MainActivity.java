@@ -1,5 +1,6 @@
 package jp.ac.meijou.android.chronos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -32,6 +33,29 @@ public class MainActivity extends AppCompatActivity {
         //　ボタンが押されたら色が変わる
         BottomNavigationView bottomNav = findViewById(R.id.bottomNav);
         bottomNav.setSelectedItemId(R.id.tab_home);
+        bottomNav.setOnItemSelectedListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.tab_home) {
+                return true;
+            } else if (id == R.id.tab_calendar) {
+                startActivity(
+                        new Intent(this, jp.ac.meijou.android.chronos.calendar.CalendarActivity.class)
+                                .addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+                );
+                return true;
+            } else if (id == R.id.tab_simulation) {
+                startActivity(
+                        new Intent(this, activity_percent.class)
+                                .addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+                );
+                return true;
+            } else if (id == R.id.tab_reflection) {
+                return true;
+            }
+            return false;
+        });
+
+
 
 
         // ステータスバー分だけ上のパディングを確保
